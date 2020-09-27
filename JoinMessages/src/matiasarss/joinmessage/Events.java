@@ -12,18 +12,18 @@ import org.bukkit.potion.PotionEffectType;
 public class Events implements Listener {
 
 	@EventHandler
-	public void onJoin(PlayerJoinEvent e) {
-		Player p = e.getPlayer();
-		Bukkit.broadcastMessage("§8[§a+§8]" + p.getName());
-		p.sendMessage("§cBienvenido a el Servidor!");
-		p.sendMessage("§cDiviertete con tus Amigos!");
-		p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 100, 1));
+	public void onJoin(PlayerJoinEvent event) {
+		Player player = event.getPlayer();
+		Bukkit.broadcastMessage("§8[§a+§8]" + player.getName());
+		player.sendMessage("§cBienvenido a el Servidor!");
+		player.sendMessage("§cDiviertete con tus Amigos!");
+		player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 100, 1));
 		
 	}
 	@EventHandler
-	public void Ondeparture(PlayerQuitEvent e) {
-		Player p = e.getPlayer();
-		Bukkit.broadcastMessage("§8[§c-§8]" + p.getName());
+	public void Ondeparture(PlayerQuitEvent event) {
+		Player player = event.getPlayer();
+		Bukkit.broadcastMessage("§8[§c-§8]" + player.getName());
 		Bukkit.broadcastMessage("§6Quedan" + Bukkit.getOnlinePlayers());
 	}
 }
